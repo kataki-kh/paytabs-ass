@@ -22,10 +22,11 @@
             
             <div class=" max-w-7xl mx-auto p-6 lg:p-12">
                <label class="text-danger">category</label>
-                                <select class="masterCategory form-select form-select-lg mb-3 " aria-label=".form-select-lg example">
-                                
-                                <option value="">1</option>
-  
+
+                                <select class="masterCategory form-select form-select-lg mb-3 " aria-label=".form-select-lg example" id="masterCategory">
+                                @foreach($category as $data)
+                                <option value="{{$data->id}}">{{$data->name}}</option>
+                                @endforeach
                                 </select>
                 </div>
                

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-
+use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     /**
@@ -13,7 +13,18 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        //get master categories
+        $category=Category::where('master_category_id',null)->get();
+        return view('welcome')->with(compact('category'));
+    }
+    /**
+     * Display a listing of the sub category for a specific category id.
+     */
+    public function getSubCategory(Request $request)
+    {
+        //get master categories
+        $category=Category::where('master_category_id',$request->id)->get();
+        return response()->json(['data'=>$category]);
     }
 
     /**
