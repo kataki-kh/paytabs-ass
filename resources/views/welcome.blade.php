@@ -20,34 +20,21 @@
     <body class="antialiased">
         <div class="relative sm:grid sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             
-            <div class=" max-w-7xl mx-auto p-6 lg:p-12">
+            <div class="masterCategoryContrainer max-w-7xl mx-auto p-6 lg:p-12">
                <label class="text-danger">category</label>
 
-                                <select class="masterCategory form-select form-select-lg mb-3 " aria-label=".form-select-lg example" id="masterCategory">
+                                <select class="masterCategory form-select form-select-lg mb-3 " aria-label=".form-select-lg example" id="masterCategory" value="" index='0' >
+                                <option disabled selected value=""> -- select an option -- </option>
                                 @foreach($category as $data)
                                 <option value="{{$data->id}}">{{$data->name}}</option>
                                 @endforeach
                                 </select>
                 </div>
                
-                <div class="row  max-w-7xl  p-6 lg:p-12 " id="subCategoryContrainer">
-                    <div class="col-md-4">
-                     <label class="text-danger">sub category</label>
-                <select class="masterCategory form-select form-select-lg mb-3 " aria-label=".form-select-lg example">
-                                
-                                <option value="">2</option>
-  
-                                </select>
-                                    </div>
-                                    <div class="col-md-4">
-                     <label class="text-danger">sub sub category</label>
-                <select class="masterCategory form-select form-select-lg mb-3 " aria-label=".form-select-lg example">
-                                
-                                <option value="">3</option>
-  
-                                </select>
-                                    </div>
-                                </div>
+                <div class="row subCategoryContrainer max-w-7xl  p-6 lg:p-12 " id="subCategoryContrainer">
+                    
+                                   
+                </div>
                                
             </div>
             
